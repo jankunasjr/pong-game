@@ -1,0 +1,5 @@
+﻿  PONG.cpp
+C:\Users\rober\OneDrive\Desktop\Game\PONG\PONG\PONG.cpp(839,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\rober\OneDrive\Desktop\Game\PONG\PONG\PONG.cpp(892,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\rober\OneDrive\Desktop\Game\PONG\PONG\PONG.cpp(935,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  PONG.vcxproj -> C:\Users\rober\OneDrive\Desktop\Game\PONG\x64\Debug\PONG.exe

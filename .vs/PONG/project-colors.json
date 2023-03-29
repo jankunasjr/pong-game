@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "01d057b2-c9ab-4fc6-9201-d52217cf84bf": {
+      "ProjectGuid": "01d057b2-c9ab-4fc6-9201-d52217cf84bf",
+      "DisplayName": "PONG",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
