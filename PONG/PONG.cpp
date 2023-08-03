@@ -47,12 +47,10 @@ public:
 	}
 	virtual void Draw_Interface() = 0;
 
-	int get_select()
-	{
+	int get_select(){
 		return select;
 	}
-	int get_select_mode()
-	{
+	int get_select_mode(){
 		return select_mode;
 	}
 };
@@ -61,35 +59,22 @@ class Start_Screen : public Game_Interface
 public:
 	void Draw_Interface() override
 	{
-		for (int i = 0; i < 40 + 1; i++)
-		{
-			cout << "\xDC";						//ceiling
-		}
+		for (int i = 0; i < 40 + 1; i++) cout << "\xDC";						//ceiling
+		
 		cout << endl;
 
 		for (int i = 0; i < 30; i++)
 		{
 			for (int j = 0; j < 40; j++)
 			{
-				if (j == 0)
-				{
-					cout << "\xDB";           //left wall
-				}
-				if (j == 40 - 1)
-				{
-					cout << "\xDB";           //right wall
-				}
-				else
-				{
-					cout << " ";
-				}
+				if (j == 0) cout << "\xDB";           //left wall
+				if (j == 40 - 1) cout << "\xDB";           //right wall
+				else cout << " ";
 			}
 			cout << endl;
 		}
-		for (int i = 0; i < 40 + 1; i++)
-		{
-			cout << "\xDF";						//floor
-		}
+		for (int i = 0; i < 40 + 1; i++) cout << "\xDF";						//floor
+		
 		cout << endl;
 
 		COORD p;
@@ -131,43 +116,27 @@ public:
 				select = _getch();
 				select = select - '0';
 			}
-			if (select < 1 || select > 3)
-			{
-				valid_select = false;
-			}
+			if (select < 1 || select > 3) valid_select = false;
 		}
 		system("cls");
 		if (select == 1)
 		{
-			for (int i = 0; i < 40 + 1; i++)
-			{
-				cout << "\xDC";						 //ceiling
-			}
+			for (int i = 0; i < 40 + 1; i++) cout << "\xDC";						 //ceiling
+
 			cout << endl;
 
 			for (int i = 0; i < 30; i++)
 			{
 				for (int j = 0; j < 40; j++)
 				{
-					if (j == 0)
-					{
-						cout << "\xDB";           //left wall
-					}
-					if (j == 40 - 1)
-					{
-						cout << "\xDB";           //right wall
-					}
-					else
-					{
-						cout << " ";
-					}
+					if (j == 0) cout << "\xDB";           //left wall
+					if (j == 40 - 1) cout << "\xDB";           //right wall
+					else cout << " ";
 				}
 				cout << endl;
 			}
-			for (int i = 0; i < 40 + 1; i++)
-			{
-				cout << "\xDF";						//floor
-			}
+			for (int i = 0; i < 40 + 1; i++) cout << "\xDF";						//floor
+			
 			cout << endl;
 
 			COORD p;
@@ -192,43 +161,27 @@ public:
 					select_mode = _getch();
 					select_mode = select_mode - '0';
 				}
-				if (select_mode < 1 || select_mode > 3)
-				{
-					valid_select = false;
-				}
+				if (select_mode < 1 || select_mode > 3) valid_select = false;
 			}
 		}
 		system("cls");
 
-		for (int i = 0; i < 40 + 1; i++)
-		{
-			cout << "\xDC";						 //ceiling
-		}
+		for (int i = 0; i < 40 + 1; i++) cout << "\xDC";						 //ceiling
+
 		cout << endl;
 
 		for (int i = 0; i < 30; i++)
 		{
 			for (int j = 0; j < 40; j++)
 			{
-				if (j == 0)
-				{
-					cout << "\xDB";           //left wall
-				}
-				if (j == 40 - 1)
-				{
-					cout << "\xDB";           //right wall
-				}
-				else
-				{
-					cout << " ";
-				}
+				if (j == 0) cout << "\xDB";           //left wall
+				if (j == 40 - 1) cout << "\xDB";           //right wall
+				else cout << " ";
 			}
 			cout << endl;
 		}
-		for (int i = 0; i < 40 + 1; i++)
-		{
-			cout << "\xDF";						//floor
-		}
+		for (int i = 0; i < 40 + 1; i++) cout << "\xDF";						//floor
+
 		cout << endl;
 		if (select_mode == 1 && select == 1)
 		{
@@ -257,10 +210,7 @@ public:
 					cout << "Invalid name" << endl;
 					coordinates += 2;
 				}
-				else
-				{
-					break;
-				}
+				else break;
 			}
 			
 		}
@@ -283,46 +233,27 @@ class End_Screen : public Game_Interface
 public:
 	void who_won()
 	{
-		if (score1 > score2)
-		{
-			throw name1;
-		}
-		else if (score1 < score2)
-		{
-			throw name2;
-		}
+		if (score1 > score2) throw name1;
+		else if (score1 < score2) throw name2;
 	}
 	void Draw_Interface() override
 	{
-		for (int i = 0; i < 40 + 1; i++)
-		{
-			cout << "\xDC";						//ceiling
-		}
+		for (int i = 0; i < 40 + 1; i++) cout << "\xDC";						//ceiling
+		
 		cout << endl;
 
 		for (int i = 0; i < 30; i++)
 		{
 			for (int j = 0; j < 40; j++)
 			{
-				if (j == 0)
-				{
-					cout << "\xDB";           //left wall
-				}
-				if (j == 40 - 1)
-				{
-					cout << "\xDB";           //right wall
-				}
-				else
-				{
-					cout << " ";
-				}
+				if (j == 0) cout << "\xDB";           //left wall
+				if (j == 40 - 1) cout << "\xDB";           //right wall
+				else cout << " ";
 			}
 			cout << endl;
 		}
-		for (int i = 0; i < 40 + 1; i++)
-		{
-			cout << "\xDF";						//floor
-		}
+		for (int i = 0; i < 40 + 1; i++) cout << "\xDF";						//floor
+		
 		cout << endl;
 
 		COORD p;
@@ -359,12 +290,10 @@ public:
 		direction = 0;
 	}
 
-	int getX()
-	{
+	int getX(){
 		return x;
 	}
-	int getY()
-	{
+	int getY(){
 		return y;
 	}
 
@@ -374,12 +303,10 @@ class Ball : public Gameplay_Objects
 public:
 	Ball(int posX, int posY) : Gameplay_Objects(posX, posY) {}
 
-	void change_dir(int d)
-	{
+	void change_dir(int d){
 		direction = d;
 	}
-	int get_dir()
-	{
+	int get_dir(){
 		return direction;
 	}
 	void Reset()
@@ -393,9 +320,7 @@ public:
 		while (1)
 		{
 			if (direction == 0) //no movement
-			{
 				break;
-			}
 			else if (direction == 1)  // move down
 			{
 				y++;
@@ -443,20 +368,16 @@ public:
 		x = og_X;
 		y = og_Y;
 	}
-	void Move_Left()
-	{
+	void Move_Left(){
 		x -= 2;
 	}
-	void Move_Right()
-	{
+	void Move_Right(){
 		x += 2;
 	}
-	void Move_Right_AI()
-	{
+	void Move_Right_AI(){
 		x++;
 	}
-	void Move_Left_AI()
-	{
+	void Move_Left_AI(){
 		x--;
 	}
 };
@@ -485,21 +406,17 @@ public:
 	{
 		delete ball, player1, player2;
 	}
-	int end()
-	{
+	int end(){
 		return end_game;
 	}
-	int get_win()
-	{
+	int get_win(){
 		return win;
 	}
 	void Draw()
 	{
 		clearScreen();
-		for (int i = 0; i < width + 2; i++)
-		{
-			cout << "\xDC";   //ceiling
-		}
+		for (int i = 0; i < width + 2; i++) cout << "\xDC";   //ceiling
+		
 		cout << endl;
 
 		HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -508,10 +425,8 @@ public:
 		{
 			for (int j = 0; j < width; j++)
 			{
-				if (j == 0)
-				{
-					cout << "\xDB";                                         //left wall
-				}
+				if (j == 0) cout << "\xDB";                                         //left wall
+				
 				if (ball->getX() == j && ball->getY() == i)
 				{
 					SetConsoleTextAttribute(hConsole, 12);
@@ -554,104 +469,62 @@ public:
 				}
 				else if (player2->getX() == j && player2->getY() == i)
 				{
-					if (name2 != "Enemy")
-					{
-						SetConsoleTextAttribute(hConsole, 11);
-					}
-					else
-					{
-						SetConsoleTextAttribute(hConsole, 13);
-					}
+					if (name2 != "Enemy") SetConsoleTextAttribute(hConsole, 11);
+					else SetConsoleTextAttribute(hConsole, 13);
+					
 					cout << "=";											//player2
 				}
 				else if (player2->getX() + 1 == j && player2->getY() == i)
 				{
-					if (name2 != "Enemy")
-					{
-						SetConsoleTextAttribute(hConsole, 11);
-					}
-					else
-					{
-						SetConsoleTextAttribute(hConsole, 13);
-					}
+					if (name2 != "Enemy") SetConsoleTextAttribute(hConsole, 11);
+					else SetConsoleTextAttribute(hConsole, 13);
+					
 					cout << "=";											//player2
 				}
 				else if (player2->getX() + 2 == j && player2->getY() == i)
 				{
-					if (name2 != "Enemy")
-					{
-						SetConsoleTextAttribute(hConsole, 11);
-					}
-					else
-					{
-						SetConsoleTextAttribute(hConsole, 13);
-					}
+					if (name2 != "Enemy") SetConsoleTextAttribute(hConsole, 11);
+					else SetConsoleTextAttribute(hConsole, 13);
+
 					cout << "=";											//player2
 				}
 				else if (player2->getX() + 3 == j && player2->getY() == i)
 				{
-					if (name2 != "Enemy")
-					{
-						SetConsoleTextAttribute(hConsole, 11);
-					}
-					else
-					{
-						SetConsoleTextAttribute(hConsole, 13);
-					}
+					if (name2 != "Enemy") SetConsoleTextAttribute(hConsole, 11);
+					else SetConsoleTextAttribute(hConsole, 13);
+
 					cout << "=";												//player2
 				}
 				else if (player2->getX() + 4 == j && player2->getY() == i)
 				{
-					if (name2 != "Enemy")
-					{
-						SetConsoleTextAttribute(hConsole, 11);
-					}
-					else
-					{
-						SetConsoleTextAttribute(hConsole, 13);
-					}
+					if (name2 != "Enemy") SetConsoleTextAttribute(hConsole, 11);
+					else SetConsoleTextAttribute(hConsole, 13);
+
 					cout << "=";												//player2
 				}
 				else if (player2->getX() + 5 == j && player2->getY() == i)
 				{
-					if (name2 != "Enemy")
-					{
-						SetConsoleTextAttribute(hConsole, 11);
-					}
-					else
-					{
-						SetConsoleTextAttribute(hConsole, 13);
-					}
+					if (name2 != "Enemy") SetConsoleTextAttribute(hConsole, 11);
+					else SetConsoleTextAttribute(hConsole, 13);
+					
 					cout << "=";													//player2
 				}
 				else if (player2->getX() + 6 == j && player2->getY() == i)
 				{
-					if (name2 != "Enemy")
-					{
-						SetConsoleTextAttribute(hConsole, 11);
-					}
-					else
-					{
-						SetConsoleTextAttribute(hConsole, 13);
-					}
+					if (name2 != "Enemy") SetConsoleTextAttribute(hConsole, 11);
+					else SetConsoleTextAttribute(hConsole, 13);
+
 					cout << "=";													//player2
 				}
-				else
-				{
-					cout << " ";
-				}
+				else cout << " ";
+
 				SetConsoleTextAttribute(hConsole, 15);
-				if (j == width - 1)
-				{
-					cout << "\xDB";
-				}
+				if (j == width - 1) cout << "\xDB";
 			}
 			cout << endl;
 		}
-		for (int i = 0; i < width + 2; i++)
-		{
-			cout << "\xDF";										//floor
-		}
+		for (int i = 0; i < width + 2; i++) cout << "\xDF";										//floor
+
 		cout << endl;
 
 		cout << name1 << ": " << score1 << endl << name2 << ": " << score2 << endl;
@@ -665,45 +538,28 @@ public:
 			char key = _getch();
 			if (key == 'a')
 			{
-				if (player1->getX() > 0)        
-				{
+				if (player1->getX() > 0) 
 					player1->Move_Left();
-				}
 			}
 			if (GetAsyncKeyState(VK_LEFT) && name2 != "Enemy")
 			{
-				if (player2->getX() > 0)         
-				{
+				if (player2->getX() > 0)
 					player2->Move_Left();
-				}
 			}
 			if (key == 'd')
 			{
 				if (player1->getX() + 8 < width)     
-				{
 					player1->Move_Right();
-				}
 			}
 			if (GetAsyncKeyState(VK_RIGHT) && name2 != "Enemy")
 			{
 				if (player2->getX() + 8 < width)        
-				{
 					player2->Move_Right();
-				}
 			}
 
-			if (ball->get_dir() == 0 && score1 >= score2)
-			{
-				ball->change_dir(4);
-			}
-			else if (ball->get_dir() == 0 && score1 < score2)
-			{
-				ball->change_dir(1);
-			}
-			if (key == 'q')         
-			{
-				end_game = 1;
-			}
+			if (ball->get_dir() == 0 && score1 >= score2) ball->change_dir(4);
+			else if (ball->get_dir() == 0 && score1 < score2) ball->change_dir(1);
+			if (key == 'q') end_game = 1;
 		}
 	}
 	void logic()
@@ -713,10 +569,7 @@ public:
 			if (ball->getY() == player1->getY() - 1)
 			{
 				if (ball->getX() + 1 == player1->getX() + i)
-				{
 					ball->change_dir(((rand() % 3) + 4));     //if ball touches paddle it bounces off up, upleft or upright
-
-				}
 			}
 		}
 		for (int i = 0; i < 8; i++) //upper paddle
@@ -724,34 +577,26 @@ public:
 			if (ball->getY() == player2->getY() + 1)
 			{
 				if (ball->getX() + 1 == player2->getX() + i)
-				{
 					ball->change_dir(((rand() % 3) + 1));   //if ball touches paddle it bounces off down,downleft or downright
-				}
 			}
 		}
 
 		if (ball->getX() == width - 1)   //right wall
 		{
-			if (ball->get_dir() == 6)
-			{
+			if (ball->get_dir() == 6){
 				ball->change_dir(5);
 			}											//if ball touches right wall and the directions was upright
 			else                                          //then direction change to upleft else downleft
-			{
 				ball->change_dir(2);
-			}
 		}
 
 		if (ball->getX() == 0) //left wall
 		{
-			if (ball->get_dir() == 5)
-			{                                      //if ball touches left wall and the directions was upleft
+			if (ball->get_dir() == 5){  //if ball touches left wall and the directions was upleft                                 
 				ball->change_dir(6);                //then direction change to upright else downright
 			}
-			else
-			{
+			else 
 				ball->change_dir(3);
-			}
 		}
 
 		if (ball->getY() > height)    // floor 
@@ -775,22 +620,17 @@ public:
 		{
 			if (ball->getX() - 1 < player2->getX())
 			{
-				if (player2->getX() > 0)
-				{
+				if (player2->getX() > 0) 
 					player2->Move_Left_AI();
-				}
 			}
 			if (ball->getX() - 1 > player2->getX())
 			{
 				if (player2->getX() + 8 < width)
-				{
 					player2->Move_Right_AI();
-				}
 			}
 		}
 	}
-	void operator ++(int)
-	{
+	void operator ++(int){
 		win = abs(score1 - score2);
 	}
 };
@@ -839,50 +679,27 @@ public:
 		int name_amount = dif_names.size();
 		dif_names.insert(name1);
 
-		if (dif_names.size() > name_amount)
-		{
-			leaderboard_map[name1] = score1;
-		}
-		else                                        //check if names are already on the leaderboard
-		{
-			found_player1 = true;
-		}
+		if (dif_names.size() > name_amount) leaderboard_map[name1] = score1;
+		else found_player1 = true; //check if names are already on the leaderboard
 
 		if (name2 != "Enemy")
 		{
-			if (found_player1 == false && dif_names.size() > name_amount)
-			{
-				leaderboard_map[name2] = score2;
-			}
-			else if (dif_names.size() - 1 > name_amount)
-			{
-				leaderboard_map[name2] = score2;
-			}
-			else
-			{
-				found_player2 = true;
-			}
+			if (found_player1 == false && dif_names.size() > name_amount) leaderboard_map[name2] = score2;
+			else if (dif_names.size() - 1 > name_amount) leaderboard_map[name2] = score2;
+			else found_player2 = true;
 		}
 
 		if (found_player1 == true || found_player2 == true)
 		{
 			for (map<string, int>::iterator it = leaderboard_map.begin(); it != leaderboard_map.end(); it++)
 			{
-				if (it->first == name1 && it->second < score1)
-				{
-					leaderboard_map[name1] = score1;
-				}
-				if (it->first == name2 && it->second < score2)
-				{
-					leaderboard_map[name2] = score2;
-				}
+				if (it->first == name1 && it->second < score1) leaderboard_map[name1] = score1;
+				if (it->first == name2 && it->second < score2) leaderboard_map[name2] = score2;
 			}
 		}
 
 		for (map<string, int>::iterator it = leaderboard_map.begin(); it != leaderboard_map.end(); it++)
-		{
 			scores.push_back(it->second);
-		}
 
 		sort(scores.begin(), scores.end());
 
@@ -917,9 +734,7 @@ public:
 		}
 
 		for (map<string, int>::iterator it = leaderboard_map.begin(); it != leaderboard_map.end(); it++)
-		{
 			scores.push_back(it->second);
-		}
 
 		sort(scores.begin(), scores.end());
 
@@ -994,18 +809,14 @@ int main()
 				m.logic();
 				m++;
 				Sleep(3);
-				if (m.end() == 1 || m.get_win() >= 10)
-				{
-					break;
-				}
+				if (m.end() == 1 || m.get_win() >= 10) break;
 			}
 			system("cls");
 			s2->Draw_Interface();
 			l.leaderboards();
 			if (m.end() != 1)
 			{
-				try
-				{
+				try{
 					e.who_won();
 				}
 				catch (string x)
@@ -1033,13 +844,8 @@ int main()
 			{
 				key_mode = _getch();
 				key_mode = key_mode - '0';
-				if (key_mode == 1)
-				{
-					return main();
-				}
-
-				else if (key_mode == 2)
-				{
+				if (key_mode == 1) return main();
+				else if (key_mode == 2){
 					system("cls");
 					return 0;
 				}
@@ -1055,18 +861,14 @@ int main()
 				m.AI();
 				m++;
 				Sleep(3);
-				if (m.end() == 1 || m.get_win() >= 10)
-				{
-					break;
-				}
+				if (m.end() == 1 || m.get_win() >= 10) break;
 			}
 			system("cls");
 			s2->Draw_Interface();
 			l.leaderboards();
 			if (m.end() != 1)
 			{
-				try
-				{
+				try{
 					e.who_won();
 				}
 				catch (string x)
@@ -1094,10 +896,7 @@ int main()
 			{
 				key_mode = _getch();
 				key_mode = key_mode - '0';
-				if (key_mode == 1)
-				{
-					return main();
-				}
+				if (key_mode == 1) return main();
 				else if (key_mode == 2)
 				{
 					system("cls");
@@ -1113,10 +912,7 @@ int main()
 		{
 			l.draw_leaderboard();
 			char key = _getch();
-			if (key == 'q')
-			{
-				return main();
-			}
+			if (key == 'q') return main();
 		}
 	}
 	if (s.get_select() == 3)
@@ -1126,4 +922,3 @@ int main()
 		return 0;
 	}
 }
-
